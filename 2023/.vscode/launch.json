@@ -1,27 +1,27 @@
 {
-    "version": "0.1.0",
+    "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug Day",
+            "name": "Launch Day",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspacefolder}/${input:day}/main",
+            "program": "${workspaceFolder}/${input:day}/main",
             "args": [
                 "${input:part}"
             ],
             "environment": [],
-            "cwd": "${workspacefolder}/${input:day}"
+            "cwd": "${workspaceFolder}/${input:day}"
         }
     ],
     "inputs": [
         {
             "id": "day",
-            "description": "Day to solve",
+            "description": "Day to solve.",
             "type":"promptString"
         },
         {
             "id": "part",
-            "description": "Part to solve",
+            "description": "Part to solve.",
             "type": "pickString",
             "options": [
                 "1",

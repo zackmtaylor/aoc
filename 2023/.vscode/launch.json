@@ -1,0 +1,33 @@
+{
+    "version": "0.1.0",
+    "configurations": [
+        {
+            "name": "Debug Day",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspacefolder}/${input:day}/main",
+            "args": [
+                "${input:part}"
+            ],
+            "environment": [],
+            "cwd": "${workspacefolder}/${input:day}"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "day",
+            "description": "Day to solve",
+            "type":"promptString"
+        },
+        {
+            "id": "part",
+            "description": "Part to solve",
+            "type": "pickString",
+            "options": [
+                "1",
+                "2"
+            ],
+            "default": "1"
+        }
+    ]
+}

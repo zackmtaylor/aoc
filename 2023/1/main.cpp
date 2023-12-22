@@ -1,8 +1,10 @@
 #include "../util/util.hpp"
 
+#include <algorithm>
 #include <functional>
 #include <iostream>
 #include <numeric>
+#include <string>
 
 namespace
 {
@@ -25,7 +27,7 @@ namespace
 
 int main(int const argc, char const *const argv[])
 {
-    std::optional<int> const part{util::parsePart(argc, argv)};
+    auto const part{util::parsePart(argc, argv)};
     if (!part)
     {
         std::cerr << "No part specified\n";
@@ -33,11 +35,11 @@ int main(int const argc, char const *const argv[])
     }
 
     // use different method based on part
-    std::function<int(std::string const &)> getCalibrationValue = part == 1 ? getDigitCalibrationValue : getWrittenCalibrationValue;
+    auto const getCalibrationValue{part == 1 ? getDigitCalibrationValue : getWrittenCalibrationValue};
 
-    auto const lines = util::getLines("input");
-    int const total = std::accumulate(lines.begin(), lines.end(), 0, [&](int total, std::string const &line)
-                                      { return total + getCalibrationValue(line); });
+    auto const lines{util::getLines("input")};
+    int const total{std::accumulate(lines.begin(), lines.end(), 0, [&](int total, std::string const &line)
+                                    { return total + getCalibrationValue(line); })};
 
     std::cout << total << "\n";
 

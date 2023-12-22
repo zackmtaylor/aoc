@@ -12,8 +12,11 @@
                 "-Wextra",
                 "-pedantic",
                 "-O3",
+                "-I",
+                "${workspaceFolder}/util",
                 "-o",
                 "${workspaceFolder}/${input:day}/main",
+                "${workspaceFolder}/util/*.cpp",
                 "${workspaceFolder}/${input:day}/main.cpp"
             ],
             "problemMatcher": [

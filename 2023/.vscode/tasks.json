@@ -7,9 +7,14 @@
             "command": "/usr/bin/g++",
             "args": [
                 "-g",
-                "${workspaceFolder}/${input:day}/main.cpp",
+                "-std=c++23",
+                "-Wall",
+                "-Wextra",
+                "-pedantic",
+                "-O3",
                 "-o",
-                "${workspaceFolder}/${input:day}/main"
+                "${workspaceFolder}/${input:day}/main",
+                "${workspaceFolder}/${input:day}/main.cpp"
             ],
             "problemMatcher": [
                 "$gcc"

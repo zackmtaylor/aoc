@@ -8,14 +8,14 @@
 
 int getDigitCalibrationValue(std::string const &line)
 {
-    auto const firstDigit{std::find_if(line.begin(), line.end(), ::isdigit)};
-    auto const lastDigit{std::find_if(line.rbegin(), line.rend(), ::isdigit)};
+    auto const firstDigit{std::find_if(line.begin(), line.end(), isdigit)};
+    auto const lastDigit{std::find_if(line.rbegin(), line.rend(), isdigit)};
 
     std::string const calibrationValue{*firstDigit, *lastDigit};
     return std::stoi(calibrationValue);
 }
 
-int getWrittenCalibrationValue(std::string const &line)
+int getWrittenCalibrationValue(std::string const &)
 {
     // todo
     return 0;
